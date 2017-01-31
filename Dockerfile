@@ -1,6 +1,7 @@
 FROM python:3-alpine
 
-ENV APP_PATH /usr/src/app
+ENV APP_PATH=/usr/src/app \
+    EDITOR=nvim
 
 RUN sed -i 's:v3\.4:v3.5:g' /etc/apk/repositories \
  && apk --no-cache upgrade
