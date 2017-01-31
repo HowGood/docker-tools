@@ -76,9 +76,7 @@ def configure(repl):
 
     # Enable open-in-editor. Pressing C-X C-E in emacs mode or 'v' in
     # Vi navigation mode will open the input in the current editor.
-    # Only if not running inside of a neovim window
-    running_in_vim = os.environ.get('VIMRUNTIME', False)
-    repl.enable_open_in_editor = not running_in_vim
+    repl.enable_open_in_editor = False
 
     # Enable system prompt. Pressing meta-! will display the system prompt.
     # Also enables Control-Z suspend.
