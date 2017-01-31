@@ -27,7 +27,10 @@ RUN apk --no-cache add \
       ptpython \
       openpyxl
 
-RUN mkdir -p "$APP_PATH"
+RUN mkdir -p "$APP_PATH" \
+ && mkdir -p /root/.ptpython
+
+COPY config.py /root/.ptpython/
 
 WORKDIR ${APP_PATH}/
 
